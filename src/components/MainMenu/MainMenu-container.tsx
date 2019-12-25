@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from "./MainMenu.module.scss";
+import SideBar from '../SideBar';
 
 export interface Props
 {
@@ -25,9 +26,7 @@ class MainMenuContainer extends React.Component<Props,State>
 	render(){
 		return (
 			<div className={styles.container}>
-				<div style={{backgroundColor:"red"}}>
-					Sidebar
-				</div>
+				<SideBar />
 				<div>
 					{this.props.children}
 				</div>

@@ -1,0 +1,10 @@
+
+/*SideBarItem View Styles*/
+@import "../../../styles/colors.scss";
+
+.item
+{
+	color:$myYellow;
+	text-decoration: underline dashed;
+	margin-bottom: 30px;
+}
