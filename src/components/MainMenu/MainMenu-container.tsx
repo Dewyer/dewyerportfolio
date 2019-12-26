@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from "./MainMenu.module.scss";
 import SideBar from '../SideBar';
+import Palette from '../../models/palette';
+import TerminalBeginLine from '../TerminalBeginLine';
+import TerminalLoadingAnimation from '../TerminalLoadingAnimation';
 
 export interface Props
 {
@@ -9,7 +12,7 @@ export interface Props
 
 export interface State
 {
-
+	animated:boolean
 }
 
 class MainMenuContainer extends React.Component<Props,State>
@@ -19,16 +22,28 @@ class MainMenuContainer extends React.Component<Props,State>
 		super(props);
 
 		this.state = {
-
+			animated:false
 		};
 	}
 
+	componentDidMount()
+	{
+		setTimeout(()=>{
+			this.setState({animated:true});
+		},1200);
+	}
+
 	render(){
+		const subPage = "/home";
+
 		return (
 			<div className={styles.container}>
 				<SideBar />
 				<div>
-					{this.props.children}
+					<span className={styles.terminalFirstLine}><TerminalBeginLine /> {!this.state.animated ? <TerminalLoadingAnimation styles={{marginLeft:10}}/> : null}</span>
+					<div className={styles.content} style={{transform:`scaleY(${this.state.animated ? 1 : 0})`}}>
+						{this.props.children}
+					</div>
 				</div>
 			</div>
 		);

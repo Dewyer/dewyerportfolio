@@ -3,6 +3,12 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LandingPage from '../LandingPage';
 import MainMenuContainer from '../MainMenu';
 
+//fab library
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fab);
+
 const App: React.FC = () => {
 	return (
 		<MainMenuContainer>

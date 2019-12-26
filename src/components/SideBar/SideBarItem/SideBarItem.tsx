@@ -1,20 +1,17 @@
 import React from 'react';
 import styles from "./SideBarItem.module.scss"
-import GlowingWrapper from '../../GlowingWrapper';
-import Palette from '../../../models/palette';
 
 export interface Props
 {
-	title: string
+	title: string,
+	url:string
 }
 
 const SideBarItem: React.FC<Props> = (props: Props) =>
 {
 
 	return (
-		<GlowingWrapper color={Palette.yellow}>
-			<a className={styles.item}>{props.title}</a>
-		</GlowingWrapper>
+		<a className={styles.item} href={props.url}>{props.title}</a>
 	);
 }
 

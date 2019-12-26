@@ -5,7 +5,7 @@ import textAssets from "../../assets/art.json";
 export interface Props
 {
 	id: string,
-	maxWidth?:number,
+	fontSize:number,
 	color?:string
 }
 
@@ -42,14 +42,9 @@ class AsciArt extends React.Component<Props, State>
 
 	render()
 	{
-		let customStyle:React.CSSProperties = {};
-		if (this.props.maxWidth)
-		{
-			customStyle = { ...customStyle,
-				width:this.props.maxWidth,
-				fontSize:(this.props.maxWidth!/11*0.62)+"px"
-			};
-		}
+		let customStyle:React.CSSProperties = {
+			fontSize:this.props.fontSize
+		};
 		if (this.props.color)
 		{
 			customStyle = {...customStyle,

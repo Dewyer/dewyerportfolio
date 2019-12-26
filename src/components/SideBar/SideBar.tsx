@@ -4,6 +4,7 @@ import AsciArt from '../AsciArt';
 import Palette from '../../models/palette';
 import GlowingWrapper from '../GlowingWrapper';
 import SideBarItem from './SideBarItem';
+import SocialLinks from '../SocialLinks';
 
 export interface Props
 {
@@ -36,14 +37,18 @@ class SideBar extends React.Component<Props, State>
 
 		];
 
-
 		return (
 			<div className={styles.container}>
-				<GlowingWrapper color={Palette.blue}><AsciArt id="logo" maxWidth={160} color={Palette.blue} /></GlowingWrapper>
-
 				<div>
-					{menuItems.map(ii => <SideBarItem title={ii.title} key={ii.title}/>)}
+				<GlowingWrapper color={Palette.blue}><AsciArt id="bigB" fontSize={7} color={Palette.blue} /></GlowingWrapper>
+				<GlowingWrapper color={Palette.blue}><AsciArt id="bigR" fontSize={7} color={Palette.blue} /></GlowingWrapper>
 				</div>
+				{/*<p style={{color:Palette.pink,fontSize:"1rem"}}>[Barnabás@Rátki <span style={{color:"white"}}>{subPage}</span>]$</p>*/}
+
+				<div className={styles.sidebarItemContainer}>
+					{menuItems.map(ii => <SideBarItem {...ii} key={ii.title}/>)}
+				</div>
+				<SocialLinks />
 			</div>
 		);
 	}

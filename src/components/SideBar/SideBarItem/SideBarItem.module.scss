@@ -1,10 +1,17 @@
 
 /*SideBarItem View Styles*/
 @import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
 
 .item
 {
 	color:$myYellow;
 	text-decoration: underline dashed;
-	margin-bottom: 30px;
+	@include noSelect();
+}
+
+.item:hover
+{
+	cursor: pointer;
+	text-shadow: 0 0 1px $myYellow, 0 0 2px $myYellow,0 0 3px $myYellow,0 0 4px $myYellow;
 }
