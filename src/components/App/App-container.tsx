@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import LandingPage from '../LandingPage';
+import AboutPageContainer from '../AboutPage';
 import MainMenuContainer from '../MainMenu';
 
 //fab library
@@ -14,7 +14,7 @@ const App: React.FC = () => {
 		<MainMenuContainer>
 			<BrowserRouter>
 				<Switch>
-					<Route path="/" component={LandingPage}/>
+					<Route path="/" component={AboutPageContainer}/>
 				</Switch>
 			</BrowserRouter>
 		</MainMenuContainer>

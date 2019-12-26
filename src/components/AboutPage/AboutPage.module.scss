@@ -1,0 +1,21 @@
+
+.container
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+}
+
+.profilePic
+{
+	width: 20%;
+	margin-left: 2rem;
+	border-radius: 50%;
+	border: dashed white 1px;
+}
+
+.textPart
+{
+	max-width: 50%;
+}
