@@ -29,13 +29,20 @@ class SideBar extends React.Component<Props, State>
 
 	render()
 	{
-		let menuItems: { title: string, url: string }[] = [
-			{ title: "About", url: "#" },
-			{ title: "Skills", url: "#" },
-			{ title: "My Work", url: "#" },
-			{ title: "Contact", url: "#" },
+		let menuItems: { title: string, url: string,current:boolean }[] = [
+			{ title: "About", url: "/",current:false },
+			{ title: "Skills", url: "/skills",current:false },
+			{ title: "My Work", url: "#",current:false },
+			{ title: "Contact", url: "#",current:false },
 
 		];
+
+		var currentSubPage = window.location.pathname;
+		let pageItem = menuItems.find(x => x.url == currentSubPage);
+		if (pageItem)
+		{
+			pageItem!.current = true;
+		}
 
 		return (
 			<div className={styles.container}>

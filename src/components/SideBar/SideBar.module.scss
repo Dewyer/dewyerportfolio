@@ -5,13 +5,14 @@
 .container
 {
 	margin: 6px 1rem 0px 6px;
-	width: 6rem;
+	width: 100px;
 	border: dashed white 1px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	height: 98vh;
+	box-sizing: content-box;
 }
 
 .sidebarItemContainer

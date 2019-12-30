@@ -6,18 +6,20 @@ import MainMenuContainer from '../MainMenu';
 //fab library
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import SkillsPage from '../SkillsPage';
 
 library.add(fab);
 
 const App: React.FC = () => {
 	return (
-		<MainMenuContainer>
-			<BrowserRouter>
+		<BrowserRouter>
+			<MainMenuContainer>
 				<Switch>
-					<Route path="/" component={AboutPageContainer}/>
+					<Route exact path="/" component={AboutPageContainer}/>
+					<Route exact path="/skills" component={SkillsPage} />
 				</Switch>
-			</BrowserRouter>
-		</MainMenuContainer>
+			</MainMenuContainer>
+		</BrowserRouter>
 	);
 }
 

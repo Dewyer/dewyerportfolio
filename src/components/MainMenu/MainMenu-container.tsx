@@ -39,7 +39,7 @@ class MainMenuContainer extends React.Component<Props,State>
 		return (
 			<div className={styles.container}>
 				<SideBar />
-				<div>
+				<div style={{maxWidth:"89%"}}>
 					<span className={styles.terminalFirstLine}><TerminalBeginLine /> {!this.state.animated ? <TerminalLoadingAnimation styles={{marginLeft:10}}/> : null}</span>
 					<div className={styles.content} style={{transform:`scaleY(${this.state.animated ? 1 : 0})`}}>
 						{this.props.children}
