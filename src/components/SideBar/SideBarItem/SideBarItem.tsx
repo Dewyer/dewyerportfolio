@@ -7,14 +7,15 @@ export interface Props
 {
 	title: string,
 	url:string,
-	current:boolean
+	current:boolean,
+	onClick():void
 }
 
 const SideBarItem: React.FC<Props> = (props: Props) =>
 {
 
 	return (
-		<Link to={props.url} className={styles.item} style={{color: props.current ? Palette.pink : Palette.yellow}} href={props.url}>{props.title}</Link>
+		<Link to={props.url} onClick={props.onClick} className={styles.item} style={{color: props.current ? Palette.pink : Palette.yellow}} href={props.url}>{props.title}</Link>
 	);
 }
 

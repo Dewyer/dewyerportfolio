@@ -15,8 +15,11 @@ const App: React.FC = () => {
 		<BrowserRouter>
 			<MainMenuContainer>
 				<Switch>
-					<Route exact path="/" component={AboutPageContainer}/>
-					<Route exact path="/skills" component={SkillsPage} />
+					<Route exact path="/" component={(props:any)=> <AboutPageContainer route={props}/>}/>
+					<Route exact path="/skills" component={(props:any)=><SkillsPage route={props}/>} />
+					<Route exact path="/work" component={(props: any) => <SkillsPage route={props} />} />
+					<Route exact path="/contact" component={(props: any) => <SkillsPage route={props} />} />
+
 				</Switch>
 			</MainMenuContainer>
 		</BrowserRouter>

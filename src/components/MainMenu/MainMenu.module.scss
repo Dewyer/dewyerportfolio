@@ -9,13 +9,6 @@
 	align-items: flex-start;
 }
 
-.terminalFirstLine {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	flex-direction: row;
-}
-
 .content {
 	transition: all 0.5s ease-in-out;
 	transform-origin: left top;

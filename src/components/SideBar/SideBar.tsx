@@ -5,6 +5,7 @@ import Palette from '../../models/palette';
 import GlowingWrapper from '../GlowingWrapper';
 import SideBarItem from './SideBarItem';
 import SocialLinks from '../SocialLinks';
+import {SideBarItemProps} from "./SideBarItem"
 
 export interface Props
 {
@@ -13,7 +14,7 @@ export interface Props
 
 export interface State
 {
-
+	currentPage:string
 }
 
 class SideBar extends React.Component<Props, State>
@@ -21,24 +22,29 @@ class SideBar extends React.Component<Props, State>
 	constructor(props: Props)
 	{
 		super(props);
+		this.onMenuButtonClicked = this.onMenuButtonClicked.bind(this);
 
 		this.state = {
-
+			currentPage:window.location.pathname
 		};
+	}
+
+	onMenuButtonClicked(btnUrl:string)
+	{
+		this.setState({currentPage:btnUrl});
 	}
 
 	render()
 	{
-		let menuItems: { title: string, url: string,current:boolean }[] = [
-			{ title: "About", url: "/",current:false },
-			{ title: "Skills", url: "/skills",current:false },
-			{ title: "My Work", url: "#",current:false },
-			{ title: "Contact", url: "#",current:false },
+		let menuItems: SideBarItemProps [] = [
+			{ title: "About", url: "/", current: false, onClick: () => { this.onMenuButtonClicked("/")} },
+			{ title: "Skills", url: "/skills", current: false, onClick: () => { this.onMenuButtonClicked("/skills") } },
+			{ title: "My Work", url: "/work", current: false, onClick: () => { this.onMenuButtonClicked("/work") } },
+			{ title: "Contact", url: "/contact", current: false, onClick: () => { this.onMenuButtonClicked("/contact") } },
 
 		];
 
-		var currentSubPage = window.location.pathname;
-		let pageItem = menuItems.find(x => x.url == currentSubPage);
+		let pageItem = menuItems.find(x => x.url === this.state.currentPage);
 		if (pageItem)
 		{
 			pageItem!.current = true;

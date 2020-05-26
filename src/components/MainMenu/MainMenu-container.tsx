@@ -4,6 +4,7 @@ import SideBar from '../SideBar';
 import Palette from '../../models/palette';
 import TerminalBeginLine from '../TerminalBeginLine';
 import TerminalLoadingAnimation from '../TerminalLoadingAnimation';
+import { RouteComponentProps } from 'react-router-dom';
 
 export interface Props
 {
@@ -40,7 +41,6 @@ class MainMenuContainer extends React.Component<Props,State>
 			<div className={styles.container}>
 				<SideBar />
 				<div style={{maxWidth:"89%"}}>
-					<span className={styles.terminalFirstLine}><TerminalBeginLine /> {!this.state.animated ? <TerminalLoadingAnimation styles={{marginLeft:10}}/> : null}</span>
 					<div className={styles.content} style={{transform:`scaleY(${this.state.animated ? 1 : 0})`}}>
 						{this.props.children}
 					</div>
